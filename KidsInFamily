@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author Brian Saaristo
+ */
+public class Controller {
+
+    public Controller() {
+        getNumberInRange();
+        kidsInFamily();
+    }// calling the methods so i dont have to look at the warnings haha
+
+    
+    // create a method that returns string values that change based on the double given and the range it is within
+    // reference the assignment tasks site for exact var names and values
+    // MAKE SURE IT RUNS AND IS SETUP ACCORDING TO SPEC
+    
+    
+    
+    private void getNumberInRange() {
+        double inputRange = 0.0;
+        int HIGH = 100;
+        int LOW = 85;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println(" Please enter a number between 85 and 100 ");
+
+        if (input.hasNextDouble());
+        {
+
+            inputRange = input.nextDouble();
+
+            if (inputRange >= LOW && inputRange <= HIGH) {
+
+                System.out.println("Great you have entered " + inputRange);
+            } else {
+                System.out.println("Input out of range");
+            }
+
+        }
+
+    }
+
+    // create an aptly named method that recieves and outputs responses based on the int given.
+    // name methods and var's so they can be simply understood and are Camelcased.
+    
+    private void kidsInFamily() {
+        int kidInput = 0;
+        int bedroomInput = 0;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("How many kids are in your family? ");
+
+        if (input.hasNextInt()) {
+            kidInput = input.nextInt();
+            System.out.println("How many bedrooms are available for the kids?");
+            if (input.hasNextInt()) {
+                bedroomInput = input.nextInt();
+                if (kidInput >= 3) {
+                    if (bedroomInput >= 3) {
+                        System.out.println("Lucky");
+                    } else if (bedroomInput == 2) {
+                        System.out.println("Cozy");
+                    } else {
+                        System.out.println("Crowded");
+                    }
+                }// end >= 3
+                else if (kidInput == 2) {
+                    if (bedroomInput >= 3) {
+                        System.out.println("Spacious!");
+                    } else if (bedroomInput == 2) {
+                        System.out.println("Lucky!");
+                    } else {
+                        System.out.println("cozy!");
+                    }
+                }// end == 2
+                else if (kidInput == 1) {
+                    if (bedroomInput >= 3) {
+                        System.out.println("Empty feeling");
+                    } else if (bedroomInput == 2) {
+                        System.out.println("Spacious");
+                    } else {
+                        System.out.println("Lucky");
+                    }
+
+                }
+            }
+            else {
+                System.out.println("Please enter a whole number");
+            }
+        }
+        else {
+            System.out.println("Please enter a whole number");
+        }
+
+    }
+}//fin
